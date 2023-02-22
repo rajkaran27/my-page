@@ -1,0 +1,15 @@
+#content {
+    margin-top: 20px;
+}
+
+.contentbox {
+    height: 300px;
+    margin-top: 10;
+    margin-bottom: 10;
+}
+
+#boxes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
