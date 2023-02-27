@@ -1,10 +1,7 @@
-/* main {
-    
-} */
-
-/* nav {
-    padding: 15;
-} */
+main {
+    background-color: #1a1a1d;
+    color: white;
+}
 
 #logo path:nth-child(1) {
     stroke-dasharray: 724.0679321289062px;
@@ -75,14 +72,11 @@
     width: 100px;
 }
 
-
-
 #start {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 700px;
-    background-color: black;
+    height: 750px;
 }
 
 #info {
@@ -92,18 +86,16 @@
     height: 400px;
 }
 
-#conts {
+/* #conts {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 500px;
-    background-color: blanchedalmond;
+    background-color: ;
     margin-top: 50px;
-}
+} */
 
-#content {
-    margin-top: 20px;
-}
+
 
 .contentbox {
     height: 300px;
@@ -111,61 +103,17 @@
     margin-bottom: 10;
 }
 
-/* #boxes {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-} */
-
-#projBoxes {
-    background-color: gray;
-
-}
 
 #myName {
     text-align: center;
     direction: ltr;
 }
 
-/* Name styles */
-/* #myName {
-    text-align: center;
-    color: hsl(0, 0%, 28%);
-    font-size: 50px !important;
-    font-weight: bold !important;
-    font-family: monospace;
-    letter-spacing: 5px !important;
-    cursor: pointer;
-    text-transform: uppercase;
-}
 
-#myName {
-    background: linear-gradient(to right, hsl(0, 0%, 30%) 0, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 30%) 20%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shine 3s infinite linear;
-}
-
-@keyframes shine {
-    0% {
-        background-position: 0;
-    }
-
-    60% {
-        background-position: 600px;
-    }
-
-    100% {
-        background-position: 600px;
-    }
-} */
-
-
-
-#footer {
+/* #footer {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     height: 150px;
-}
+} */

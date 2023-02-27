@@ -5,7 +5,8 @@ import { useState } from "react"
 // import { Fade } from "react-awesome-reveal"
 import '../styles/index.css'
 import myImg from '../images/me.jpg'
-import myIcon from '../images/myIcon.png'
+
+// const mysql = require('../images/mysql.png');
 
 import ProjectBox from "../components/ProjectBox"
 
@@ -13,35 +14,8 @@ import ProjectBox from "../components/ProjectBox"
 import { motion } from "framer-motion"
 import { Row, Col } from 'react-bootstrap';
 import { GithubOutlined } from "@ant-design/icons"
-
-const projects = [
-  {
-    href: "https://github.com/rajkaran27/DVD-Rental-page",
-    title: "DVD Rental Page",
-    desc: "A website for users to search through a database of DVDs and filter their search options accordingly. Admins could log in and manage actors and customers. The Sakila database was used for this project.",
-    lang1: "Express",
-    lang2: "NodeJS",
-    lang3:"MySQL"
-  },
-  {
-    href: "https://github.com/rajkaran27/Java-Comic-Rental",
-    title: "Comic Rental Page",
-    desc: "A comic rental system GUI.",
-    lang1: "Java"
-  },
-  {
-    href: "https://github.com/rajkaran27/FOP",
-    title: "Membership Management System",
-    desc: "A simple membership management system made using basic Javascript in my first semester in Singapore Polytechnic.",
-    lang1: "Javascript"
-  },
-  {
-    href: "https://github.com/rajkaran27/FirstReactApp",
-    title: "Budget Application",
-    desc: "An application to track your spending. Users can add their recent transactions and group it accordingly.",
-    lang1: "React Native"
-  }
-];
+import { SiJavascript, SiMysql, SiJava, SiReact, SiExpress } from "react-icons/si"
+import { IoLogoNodejs } from "react-icons/io"
 
 const IndexPage = () => {
   return (
@@ -49,8 +23,8 @@ const IndexPage = () => {
       <nav className="navbar navbar-expand-lg">
         <div className="container">
 
-          <img src={myIcon} id="myIcon" />
-          <motion.div whileHover={{scale:1.2, color:"red"}}>
+          <img  id="myIcon" />
+          <motion.div whileHover={{ scale: 1.2, opacity:0.7 }}>
             <a className="nav-link" id="githublink" href="https://github.com/rajkaran27" target="_blank" style={{ fontSize: 30 }}><GithubOutlined /></a>
           </motion.div>
 
@@ -59,8 +33,7 @@ const IndexPage = () => {
       </nav>
 
       <div id="content" >
-
-        <div className="contentbox " id="start">
+        <div className="contentbox" id="start">
           <svg id="logo" width="1087" height="145" viewBox="0 0 1087 145" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M73 142L43.8 89H35.6V142H1.40002V1.60001H58.8C69.8667 1.60001 79.2667 3.53334 87 7.4C94.8667 11.2667 100.733 16.6 104.6 23.4C108.467 30.0667 110.4 37.5333 110.4 45.8C110.4 55.1333 107.733 63.4667 102.4 70.8C97.2 78.1333 89.4667 83.3333 79.2 86.4L111.6 142H73ZM35.6 64.8H56.8C63.0667 64.8 67.7334 63.2667 70.8 60.2C74 57.1333 75.6 52.8 75.6 47.2C75.6 41.8667 74 37.6667 70.8 34.6C67.7334 31.5333 63.0667 30 56.8 30H35.6V64.8Z" stroke="white" strokeWidth="0.9" mask="url(#path-1-outside-1_1_4)" />
             <path d="M219.269 117.2H166.869L158.469 142H122.669L173.469 1.60001H213.069L263.869 142H227.669L219.269 117.2ZM210.469 90.8L193.069 39.4L175.869 90.8H210.469Z" stroke="white" strokeWidth="0.9" mask="url(#path-1-outside-1_1_4)" />
@@ -77,42 +50,49 @@ const IndexPage = () => {
           <div className="container" id="about">
             <h2 className="text-3xl font-bold underline">About Me</h2>
             <div className="row">
-              <div className="col-md-6" style={{ flexBasis: "50%" }}>
-                <p>Hello! My name is Rajkaran and I am currently studying in Singapore Polytechnic. I am about to enter the second year of my education in Singapore Polytechnic.</p>
+              <div style={{ flexBasis: "50%" }}>
+                <p style={{lineHeight:2}}>
+                  Hello! My name is Rajkaran and I am currently studying in Singapore Polytechnic.
+                  I am pursuing my Diploma in Information Technology and I am currently in year two of my education.
+                  My interest for programming started when I was 16.
+                </p>
               </div>
-              <div className="col-md-6" style={{ flexBasis: "50%" }}>
+              <div style={{ flexBasis: "50%" }}>
                 <img alt="A picture of me." style={{ height: 300, width: 300 }} />
+
               </div>
             </div>
           </div>
         </div>
-        <div className="contentbox" id="conts">
+        <div id="conts">
           <div className="container" id="projects">
-            <div className="container">
+            <div>
               <h2>My Projects</h2>
-              <p>School and personal projects.</p>
             </div>
-
-            <div id="boxes" className="container">
+            <div id="boxes">
               <Row>
-                {projects.map((project, index) => (
-                  <Col key={index} xs={12} md={4} className="mb-3">
-                    <ProjectBox
-                      href={project.href}
-                      title={project.title}
-                      desc={project.desc}
-                      lang1={project.lang1}
-                      lang2={project.lang2}
-                    />
-                  </Col>
-                ))}
+                <ProjectBox href="https://github.com/rajkaran27/DVD-Rental-page"
+                  title="DVD Rental Page"
+                  desc="A website for users to search through a database of DVDs and filter their search options accordingly. Admins can log in and manage actors and customers. The Sakila database was used for this project."
+                  icon1={<SiExpress style={{ fontSize: 35 }} />}
+                  icon2={<IoLogoNodejs style={{ fontSize: 35, color: "#8CC84B" }}
+                  icon3={<SiMysql style={{fontSize:35}}/>}
+                  />} />
+                <ProjectBox href="https://github.com/rajkaran27/Java-Comic-Rental"
+                  title="Comic Rental Page" desc="A comic rental system GUI which allows users to search through the available comics and members. Admins can log in and manage comics and members."
+                  icon1={<SiJava style={{ fontSize: 35 }}
+                  />} />
+                <ProjectBox href="https://github.com/rajkaran27/FOP"
+                  title="Membership Management System"
+                  desc="A simple membership management system made using basic Javascript in my first semester in Singapore Polytechnic."
+                  icon1={<SiJavascript style={{ fontSize: 35, color: "#F7DF1E" }}
+                  />} />
+                <ProjectBox href="https://github.com/rajkaran27/FirstReactApp"
+                  title="Budget Application" desc="An application to track your spending. Users can add their recent transactions and group it accordingly."
+                  icon1={<SiReact style={{ fontSize: 35, color: "#61DAFC" }} />}
+                />
               </Row>
             </div>
-          </div>
-        </div>
-        <div>
-          <div className="container" id="footer">
-            <p>Built & Designed by M.Rajkaran</p>
           </div>
         </div>
       </div>
